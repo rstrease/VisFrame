@@ -23,6 +23,52 @@
 	
 	<!--Document Body-->
 	<body>
-
+		<header>
+			<h1>Add Tool/Item To List</h1>
+		</header>
+		<!--start form-->
+		<form action="#" method="post">
+		<fieldset>
+			<legend>Tool/Item</legend>
+			<ul>
+				<li>
+				<label for="name">Name: </label><input type="text" id="name" /><br />
+				</li>
+				<li>
+				<label for="tooltype">Tool/Item Type: </label>
+				<select id="tooltype">
+					<option value="Hand Tool">Hand Tool</option>
+					<option value="Power Tool">Power Tool</option>
+					<option value="Power Tool Accessory">Power Tool Accessory</option>
+					<option value="Hardware">Hardware</option>
+					<option value="Wood">Wood</option>
+				</select><br />
+				</li>
+				<li><label for="make">Make: </label><input type="text" id="make" /><br /></li>
+				<li><label for="mnumber">Model Number: </label><input type="text" id="mnumber" /><br /></li>
+				<li><label for="snumber">Serial Number: </label><input type="text" id="snumber" /><br /></li>
+				<li><label for="dpurchased">Date Purchased: </label><input type="date" id="dpurchased" /><br /></li>
+				<li><label for="wpurchased">Where Purchased: </label><input type="text" id="wpurchased" /><br /></li>
+				<li><label for="price">Price: </label><input  type="text" id="price" /><br /></li><li>
+				<label for="ev">Estimated Value: </label><input type="text" id="ev" /><br /></li>
+				<li>Purchased New or Used?
+				<ul>
+					<li><input type="radio" checked value="New" id="new" name="condition" /><label for="new">New</label></li>
+					<li><input type="radio" value="Used" id="used" name="condition" /><label for="used">Used</label></li>
+				</ul>
+				</li>
+				<li><label>Quantity: </label><input type="range" min="1" max="11" value="0" step="1" /></li>
+				<li><label for="dateadded">Date Added: </label><input type="date" id="dateadded" /></li>
+				<li><label for="notes">Additional Notes: </label><textarea id="notes"></textarea></li>
+			</ul>
+		</fieldset>
+		</form>
+		<!--add item button-->
+		<input type="submit" value="Add Tool/Item to List" /><br /><br />
+		<!--footer-->
+		<footer>
+			<a href="#">Clear Data</a><br />
+			<a href="#">Display Data</a>
+		</footer>
 	</body>
 </html>
