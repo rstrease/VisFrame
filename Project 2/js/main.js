@@ -82,7 +82,7 @@ window.addEventListener("DOMContentLoaded", function(){
             
         //save to local storage: use stringify to convert to string
         localStorage.setItem(id, JSON.stringify(item));
-        alert("Tool/Item is Stored!");
+        alert("Your item stored successfully!");
         
     }
     
@@ -125,7 +125,7 @@ window.addEventListener("DOMContentLoaded", function(){
     	}
     	else{
     		localStorage.clear();
-    		alert("Contents have been deleted.");
+    		alert("The contents have been deleted.");
     		window.location.reload();
     		return false;
     	}
