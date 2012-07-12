@@ -179,7 +179,7 @@ fieldset ul{
 	background-color: #4B88B6;
 	-webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
 	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
-	border-bottom: 0.1em solid #858585;
+	border: 1px solid #00516E;
 }
 
 #items ul{
