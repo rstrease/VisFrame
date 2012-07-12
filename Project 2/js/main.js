@@ -121,7 +121,7 @@ window.addEventListener("DOMContentLoaded", function(){
     
     function clearData(){
     	if (localStorage.length === 0){
-    		alert("You have no data to clear.") 		
+    		alert("You have no data to clear.");		
     	}
     	else{
     		localStorage.clear();
@@ -135,7 +135,7 @@ window.addEventListener("DOMContentLoaded", function(){
     var display = $('display');
     display.addEventListener("click", displayData);
     
-    var clearLink = $('clear');
+    var clear = $('clear');
     clear.addEventListener("click", clearData);
     
     var submit = $('submit');
