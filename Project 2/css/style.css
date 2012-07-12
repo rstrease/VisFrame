@@ -51,14 +51,16 @@ h1{
 	text-align: center;
 	font-size: 18px;
 	position: relative;
-	top: 25px;
 }
 
 #subheader{
 	text-align: center;
 	color: #00516E;
 	position: relative;
-	top: 65px;
+}
+
+#toolimage{
+	text-align: center;
 }
 
 #wrapper{
