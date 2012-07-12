@@ -82,7 +82,7 @@ window.addEventListener("DOMContentLoaded", function(){
             
         //save to local storage: use stringify to convert to string
         localStorage.setItem(id, JSON.stringify(item));
-        alert("Your item stored successfully!");
+        alert("Your item was stored successfully!");
         
     }
     
@@ -90,7 +90,7 @@ window.addEventListener("DOMContentLoaded", function(){
     function displayData(){
 
         if(localStorage.length === 0){
-        	alert("There is no data to display.");
+        	alert("You have no data to display.");
         	return false;
         }
         else {	
@@ -121,11 +121,11 @@ window.addEventListener("DOMContentLoaded", function(){
     
     function clearData(){
     	if (localStorage.length === 0){
-    		alert("There is no data to clear.") 		
+    		alert("You have no data to clear.") 		
     	}
     	else{
     		localStorage.clear();
-    		alert("The contents have been deleted.");
+    		alert("Your contents have been deleted.");
     		window.location.reload();
     		return false;
     	}
