@@ -185,17 +185,17 @@ fieldset ul{
 #items ul{
 	list-style-type: none;
 	float: left;
-	margin: 8px;
 	padding: 0;
-	border-radius: 10px;
-	background-color: white;
+	margin: 0 8px 8px;
 }
 
-#items li{
+#items ul li{
 	list-style-type: none;
 	float: left;
 	width:100%;
 	border: none;
 	color: #00516E;
-
+	border-radius: 10px;
+	background-color: white;
+	margin-top: 8px;
 }
