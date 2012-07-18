@@ -1,4 +1,4 @@
-//project 2
+//project 3
 //Ryan Trease
 
 //Wait until DOM is loaded
@@ -117,6 +117,46 @@ window.addEventListener("DOMContentLoaded", function(){
             	}
             }
         }
+    }
+    
+    function editItem(){
+    	//grab item data from local storage
+    	var value = localStorage.getItem(this.key);
+    	var item = JSON.parse(value);
+    	//show form
+    	toggleControls("off");
+    	
+    	$('name').value = item.name[1];
+    	$('groups').value = item.group[1];
+    	$('make').value = item.make[1];
+    	$('mnumber').value = item.mnumber[1];
+    	$('snumber').value = item.snumber[1];
+    	$('dpurchased').value = item.dpurchased[1];
+    	$('wpurchased').value = item.wpurchased[1];
+    	$('price').value = item.price[1];
+    	$('ev').value = item.ev[1];
+    	var radios = document.forms[0].condition;
+    	for(var i = 0; i<radios.length; i++){
+    		if(radios[i].value == "New" && item.purchased[1] == "New"){
+    			radios[i].setAttribute("checked", "checked");
+    		}
+    		else if(radios[i].value == "Used" && item.purchased[1] == "Used"){
+    			radios[i].setAttribute("checked", "checked");
+    		}
+    	}
+    	$('qty').value = item.qty[1];
+    	$('dateadded').value = item.dateadded[1];
+    	$('notes').value = item.notes[1];
+    	
+    	//remove listener from input 'add item' button
+    	save.removeEventListener("click", storeData);
+    	//change submit value to edit
+    	$('submit').value = "Edit Item";
+    	var editSubmit = $('submit');
+    	//save key value established
+    	editSubmit.addEventListener("click", validate);
+    	editSubmit.key = this.key;
+    	
     }
     
     function clearData(){
