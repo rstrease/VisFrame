@@ -159,6 +159,9 @@ fieldset ul{
 	background: #4B88B6;
 	width: 175px;
 	color: white;
+	float: left;
+	margin-top: -2px;
+	margin-left: 65px;
 	-moz-border-radius: 0px 0px 10px 10px;
 	-webkit-border-radius: 0px 0px 10px 10px;
 	-webkit-appearance: none;
@@ -227,6 +230,7 @@ fieldset ul{
 span{
 	color: #00516E;
 	margin: 8px;
+	font-size: 12px;
 }
 
 #errors{
