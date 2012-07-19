@@ -1,4 +1,4 @@
-//project 3
+//project 2
 //Ryan Trease
 
 //Wait until DOM is loaded
@@ -7,6 +7,7 @@ window.addEventListener("DOMContentLoaded", function(){
     //variables
     var toolType = ["--Select Type--", "Hand Tool", "Power Tool", "Power Tool Accessory", "Hardware", "Lumber"];
     var purchaseType;
+    var errMsg = $('errors');
    
     //getElementById function
     function $(x){
@@ -62,8 +63,13 @@ window.addEventListener("DOMContentLoaded", function(){
     }
     
     //select data and submit
-    function submitData(){
-        var id = Math.floor(Math.random()*100000001);
+    function storeData(key){
+    	if(!key){
+    		var id = Math.floor(Math.random()*100000001);
+    	}
+    	else{
+    		id = key;
+    	}
         getSelected();
         var item = {};
             item.name = ["Name:", $('name').value];
@@ -98,25 +104,52 @@ window.addEventListener("DOMContentLoaded", function(){
 	        var makeDiv = document.createElement('div');
 	        makeDiv.setAttribute("id", "items");
 	        var makeList = document.createElement('ul');
+	        makeList.setAttribute("id", "ulList");
 	        makeDiv.appendChild(makeList);
 	        document.body.appendChild(makeDiv);
 	        $('items').style.display = "block";
 	        for(var i=0, len=localStorage.length; i<len; i++){
 	            var makeLi = document.createElement('li');
+	            makeLi.setAttribute("id", "mainLi");
+	            var linksLi = document.createElement('li');
+	            linksLi.setAttribute("id", "editDeleteLi");
 	            makeList.appendChild(makeLi);
 	            var key = localStorage.key(i);
 	            var value = localStorage.getItem(key);
 	            var obj = JSON.parse(value);
 	            var makeSubList = document.createElement('ul');
+	            makeSubList.setAttribute("id", "subUl");
 	            makeLi.appendChild(makeSubList);
 	            for(var n in obj){
 	                var makeSubLi = document.createElement('li');
 	                makeSubList.appendChild(makeSubLi);
 	                var optSubText = obj[n][0]+" "+obj[n][1];
 	                makeSubLi.innerHTML = optSubText;
+	                makeSubList.appendChild(linksLi);
             	}
+	            makeItemLinks(localStorage.key(i), linksLi); //create edit and delete buttons
             }
         }
+    }
+    
+    function makeItemLinks(key, linksLi){
+    	var editLink = document.createElement('a');
+    	editLink.setAttribute("id", "edButtons");
+    	editLink.href = "#";
+    	editLink.key = key;
+    	var editText = "Edit Item";
+    	editLink.addEventListener("click", editItem);
+    	editLink.innerHTML = editText;
+    	linksLi.appendChild(editLink);
+    	
+    	var deleteLink = document.createElement('a');
+    	deleteLink.setAttribute("id", "edButtons");
+    	deleteLink.href = "#";
+    	deleteLink.key = key;
+    	var deleteText = "Delete Item";
+    	//deleteLink.addEventListener("click", deleteItem);
+    	deleteLink.innerHTML = deleteText;
+    	linksLi.appendChild(deleteLink);
     }
     
     function editItem(){
@@ -171,6 +204,65 @@ window.addEventListener("DOMContentLoaded", function(){
     	}
     }
     
+    function validate(e){
+    	//define elements to check
+    	var getName = $('name');
+    	var getGroup = $('groups');
+    	var getMake = $('make');
+    	var getMnumber = $('mnumber');
+    	
+    	//reset error messages
+    	errMsg.innerHTML = "";
+    	getName.style.border = "1px solid #4B88B6";
+    	getGroup.style.border = "1px solid #4B88B6";
+    	getMake.style.border = "1px solid #4B88B6";
+    	getMnumber.style.border = "1px solid #4B88B6";
+    	
+    	//error messages
+    	var errorMessageArray = [];
+    	//name error message
+    	if(getName.value === ""){
+    		var nameError = "Please enter an item name.";
+    		getName.style.border = "1px solid red";
+    		errorMessageArray.push(nameError);
+    	}
+    	
+    	//group error message
+    	if(getGroup.value === "--Select Type--"){
+    		var groupError = "Please enter a tool type.";
+    		getGroup.style.border = "1px solid red";
+    		errorMessageArray.push(groupError);
+    	}
+    	
+    	//make error message
+    	if(getMake.value === ""){
+    		var makeError = "Please enter a tool make.";
+    		getMake.style.border = "1px solid red";
+    		errorMessageArray.push(makeError);
+    	}
+    	
+    	//model number error message
+    	if(getMnumber.value === ""){
+    		var mnumberError = "Please enter a model number.";
+    		getMnumber.style.border = "1px solid red";
+    		errorMessageArray.push(mnumberError);
+    	}
+    	
+    	if(errorMessageArray.length >=1){
+    		for(var i = 0, j=errorMessageArray.length; i < j; i++){
+    			var txt = document.createElement('li');
+    			txt.innerHTML = errorMessageArray[i];
+    			errMsg.appendChild(txt);
+    		}
+        	e.preventDefault();
+        	return false;
+    	}
+    	else{
+    		//if data is entered correctly it gets stored here
+    		storeData(this.key);
+    	}
+    }
+    
     //Links & click events
     var display = $('display');
     display.addEventListener("click", displayData);
@@ -178,6 +270,6 @@ window.addEventListener("DOMContentLoaded", function(){
     var clear = $('clear');
     clear.addEventListener("click", clearData);
     
-    var submit = $('submit');
-    submit.addEventListener("click", submitData);
+    var save = $('submit');
+    save.addEventListener("click", validate);
 });
