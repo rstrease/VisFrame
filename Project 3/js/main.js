@@ -81,7 +81,7 @@ window.addEventListener("DOMContentLoaded", function(){
             item.wpurchased = ["Where Purchased: ", $('wpurchased').value];
             item.price = ["Price: ", $('price').value];
             item.ev = ["Estimated Value: ", $('ev').value];
-            item.purchased = ["New or Used: ", purchaseType];
+            item.condition = ["New or Used: ", purchaseType];
             item.qty = ["Quantity: ", $('qty').value];
             item.dateadded = ["Date Added: ", $('dateadded').value];
             item.notes = ["Additional notes: ", $('notes').value];
@@ -132,6 +132,7 @@ window.addEventListener("DOMContentLoaded", function(){
         }
     }
     
+    //makes item links
     function makeItemLinks(key, linksLi){
     	var editLink = document.createElement('a');
     	editLink.setAttribute("id", "edButtons");
@@ -170,10 +171,10 @@ window.addEventListener("DOMContentLoaded", function(){
     	$('ev').value = item.ev[1];
     	var radios = document.forms[0].condition;
     	for(var i = 0; i<radios.length; i++){
-    		if(radios[i].value == "New" && item.purchased[1] == "New"){
+    		if(radios[i].value == "New" && item.condition[1] == "New"){
     			radios[i].setAttribute("checked", "checked");
     		}
-    		else if(radios[i].value == "Used" && item.purchased[1] == "Used"){
+    		else if(radios[i].value == "Used" && item.condition[1] == "Used"){
     			radios[i].setAttribute("checked", "checked");
     		}
     	}
@@ -196,7 +197,7 @@ window.addEventListener("DOMContentLoaded", function(){
     	var ask = confirm("Are you sure you want to delete this item?");
     	if(ask){
     		localStorage.removeItem(this.key);
-    		alert("contact was deleted.");
+    		alert("Item was deleted.");
     		window.location.reload();
     	}
     	else{
