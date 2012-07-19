@@ -1,4 +1,4 @@
-//project 2
+//project 3
 //Ryan Trease
 
 //Wait until DOM is loaded
@@ -103,7 +103,7 @@ window.addEventListener("DOMContentLoaded", function(){
 	        toggleControls("on");
 	        var makeDiv = document.createElement('div');
 	        makeDiv.setAttribute("id", "items");
-	        var makeList = document.createElement('ul');
+	        var makeList = document.createElement('div');
 	        makeList.setAttribute("id", "ulList");
 	        makeDiv.appendChild(makeList);
 	        document.body.appendChild(makeDiv);
@@ -117,7 +117,7 @@ window.addEventListener("DOMContentLoaded", function(){
 	            var key = localStorage.key(i);
 	            var value = localStorage.getItem(key);
 	            var obj = JSON.parse(value);
-	            var makeSubList = document.createElement('ul');
+	            var makeSubList = document.createElement('div');
 	            makeSubList.setAttribute("id", "subUl");
 	            makeLi.appendChild(makeSubList);
 	            for(var n in obj){
@@ -147,7 +147,7 @@ window.addEventListener("DOMContentLoaded", function(){
     	deleteLink.href = "#";
     	deleteLink.key = key;
     	var deleteText = "Delete Item";
-    	//deleteLink.addEventListener("click", deleteItem);
+    	deleteLink.addEventListener("click", deleteItem);
     	deleteLink.innerHTML = deleteText;
     	linksLi.appendChild(deleteLink);
     }
@@ -190,6 +190,18 @@ window.addEventListener("DOMContentLoaded", function(){
     	editSubmit.addEventListener("click", validate);
     	editSubmit.key = this.key;
     	
+    }
+    
+    function deleteItem(){
+    	var ask = confirm("Are you sure you want to delete this item?");
+    	if(ask){
+    		localStorage.removeItem(this.key);
+    		alert("contact was deleted.");
+    		window.location.reload();
+    	}
+    	else{
+    		alert("Item was not deleted.");
+    	}
     }
     
     function clearData(){
