@@ -156,21 +156,17 @@ fieldset ul{
 }
 
 #submit{
-	background-color: #4B88B6;
-	float: inherit;
-	padding: 5px 15px;
-	margin: -4px;
+	background: #4B88B6;
 	width: 175px;
-	border: 1px solid #00516E;
 	color: white;
-	font-size: 18px;
-	border-radius: 0 0 10px 10px;
+	-moz-border-radius: 0px 0px 10px 10px;
+	-webkit-border-radius: 0px 0px 10px 10px;
+	-webkit-appearance: none;
+	border: 1px solid #00516E;
 	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-	font-family: Times;
-	font-weight: bold;
-	cursor: hand;
-	cursor: pointer;
+	padding: 5px 15px;
+	font: bold 18px Times;
 	vertical-align: middle;
 }
 
