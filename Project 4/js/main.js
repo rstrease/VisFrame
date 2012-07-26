@@ -94,13 +94,11 @@ window.addEventListener("DOMContentLoaded", function(){
     
     //write data to display in browser
     function displayData(){
-
+		toggleControls("on");
         if(localStorage.length === 0){
-        	alert("You have no data to display.");
-        	return false;
+        	alert("You have no data to display so default data will be added.");
+        	autoFillData();
         }
-        else {	
-	        toggleControls("on");
 	        var makeDiv = document.createElement('div');
 	        makeDiv.setAttribute("id", "items");
 	        var makeList = document.createElement('div');
@@ -120,6 +118,7 @@ window.addEventListener("DOMContentLoaded", function(){
 	            var makeSubList = document.createElement('div');
 	            makeSubList.setAttribute("id", "subUl");
 	            makeLi.appendChild(makeSubList);
+	            getImage(obj.groups[1], makeSubList);
 	            for(var n in obj){
 	                var makeSubLi = document.createElement('li');
 	                makeSubList.appendChild(makeSubLi);
@@ -129,7 +128,6 @@ window.addEventListener("DOMContentLoaded", function(){
             	}
 	            makeItemLinks(localStorage.key(i), linksLi); //create edit and delete buttons
             }
-        }
     }
     
     function getImage(toolName, makeSubList){
