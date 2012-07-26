@@ -132,6 +132,14 @@ window.addEventListener("DOMContentLoaded", function(){
         }
     }
     
+    function autoFillData(){
+	    //store JSON data in actual storage
+	    for(var n in json){
+		    var id = Math.floor(Math.random()*100000001);
+		    localStorage.setItem(id, JSON.stringify(json[n]));
+	    }
+    }
+    
     //makes item links
     function makeItemLinks(key, linksLi){
     	var editLink = document.createElement('a');
