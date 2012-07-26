@@ -73,7 +73,7 @@ window.addEventListener("DOMContentLoaded", function(){
         getSelected();
         var item = {};
             item.name = ["Name:", $('name').value];
-            item.group = ["Group: ", $('groups').value];
+            item.groups = ["Tool/Item Type: ", $('groups').value];
             item.make = ["Make: ", $('make').value];
             item.mnumber = ["Model Number: ", $('mnumber').value];
             item.snumber = ["Serial Number: ", $('snumber').value];
@@ -137,7 +137,7 @@ window.addEventListener("DOMContentLoaded", function(){
     	var setSource = newImage.setAttribute("src", "/images" + toolName + ".png");
     	imagesLi.appendChild(newImage);
     }
-    
+        
     function autoFillData(){
 	    //store JSON data in actual storage
 	    for(var n in json){
@@ -175,7 +175,7 @@ window.addEventListener("DOMContentLoaded", function(){
     	toggleControls("off");
     	
     	$('name').value = item.name[1];
-    	$('groups').value = item.group[1];
+    	$('groups').value = item.groups[1];
     	$('make').value = item.make[1];
     	$('mnumber').value = item.mnumber[1];
     	$('snumber').value = item.snumber[1];
