@@ -132,6 +132,14 @@ window.addEventListener("DOMContentLoaded", function(){
         }
     }
     
+    function getImage(toolName, makeSubList){
+    	var imagesLi = document.createElement('li');
+    	makeSubList.appendChild(imagesLi);
+    	var newImage = document.createElement('img');
+    	var setSource = newImage.setAttribute("src", "/images" + toolName + ".png");
+    	imagesLi.appendChild(newImage);
+    }
+    
     function autoFillData(){
 	    //store JSON data in actual storage
 	    for(var n in json){
