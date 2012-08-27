@@ -31,20 +31,6 @@ h1{
     line-height: 25px;
 }
 
-#button {
-	background-color: #4B88B6;
-	padding: 5px 15px;
-	border: 1px solid #00516E;
-	color: white;
-	font-size: 18px;
-	text-decoration: none;
-	vertical-align: middle;
-	margin-left: 2.5px;
-	border-radius: 0 0 10px 10px;
-	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-}
-
 #appdescription{
 	margin: 8px;
 	color: #4B88B6;
@@ -97,7 +83,6 @@ a {
 	font-size: 18px;
 	text-decoration: none;
 	vertical-align: middle;
-	margin-left: 2.5px;
 	border-radius: 0 0 10px 10px;
 	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
@@ -168,12 +153,28 @@ fieldset ul{
 #footer{
 	text-align: center;
 	height: 48px;
-	line-height: 25px;
 }
 
-#items{
-	list-style-type: none;
+#submit{
+	background: #4B88B6;
+	width: 175px;
+	color: white;
 	float: left;
+	margin-top: -2px;
+	margin-left: 65px;
+	-moz-border-radius: 0px 0px 10px 10px;
+	-webkit-border-radius: 0px 0px 10px 10px;
+	-webkit-appearance: none;
+	border: 1px solid #00516E;
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+	padding: 5px 15px;
+	font: bold 18px Times;
+	vertical-align: middle;
+}
+
+#ulList{
+	list-style-type: none;
 	margin: 0 8px 8px;
 	border-radius: 18px;
 	background-color: #4B88B6;
@@ -182,20 +183,57 @@ fieldset ul{
 	border: 1px solid #00516E;
 }
 
-#items ul{
+#mainLi{
 	list-style-type: none;
-	float: left;
-	padding: 0;
-	margin: 0 8px 8px;
-}
-
-#items ul li{
-	list-style-type: none;
-	float: left;
-	width:100%;
-	border: none;
-	color: #00516E;
+	margin: 8px;
 	border-radius: 10px;
 	background-color: white;
+	border: 0.1em solid #cacaca;
+	-webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+#subUl{
+	list-style-type: none;
 	margin-top: 8px;
+}
+
+#subUl li{
+	list-style-type: none;
+}
+
+#items li{
+	color: #00516E;
+	margin-left: 8px;
+}
+
+#editDeleteLi{
+	margin-top: 20px;
+	text-align: center;
+}
+
+#edButtons{
+	list-style-type: none;
+	background-color: #4B88B6;
+	padding: 5px 15px 2px;
+	border: 1px solid #00516E;
+	color: white;
+	font-size: 18px;
+	text-decoration: none;
+	vertical-align: middle;
+	border-radius: 5px 5px 0px 0px;
+	-webkit-box-shadoww: 0 1px 3px rgba(0, 0, 0, 0.5);
+	box-shadow: 1px 0 3px rgba(0, 0, 0, 0.5);
+	font-weight: bold;
+	margin-right: 4px;
+}
+
+span{
+	color: #00516E;
+	margin: 8px;
+	font-size: 12px;
+}
+
+#errors{
+	color: red;
+	margin-bottom: 8px;
 }
