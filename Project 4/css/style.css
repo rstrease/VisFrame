@@ -1,0 +1,239 @@
+body {
+	margin: 0;
+    padding: 0;
+    height: 100%;
+	background-color: silver;
+}
+
+.header .top {
+	position: relative;
+	height: 40px;
+	font-weight: bold;
+	-webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+	border-bottom: 0.1em solid #444444;
+	background-image: -webkit-linear-gradient(top, #555555 0%, #696969 50%, #696969 50%, #555555 100%);
+}
+
+h1{
+	font-size: 32px;
+	text-align: center;
+	text-shadow: 0 -1px -2px rgba(0, 0, 0, 0.5);
+	line-height: 40px;
+	margin: 0px;
+	color: #efefef;
+	z-index: 1;
+}
+
+#nav {
+    height: 38px;
+    text-align: center;
+    line-height: 25px;
+}
+
+#appdescription{
+	margin: 8px;
+	color: #4B88B6;
+	text-align: center;
+	font-size: 18px;
+	position: relative;
+}
+
+#subheader{
+	text-align: center;
+	color: #00516E;
+	position: relative;
+}
+
+#toolimage{
+	text-align: center;
+}
+
+#wrapper{
+	position: relative;
+	left: 0px;
+	border: 0.1em solid #00516E;
+	border-radius: 18px;
+	background-color: #4B88B6;
+	-webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+	margin: 8px 8px 0px;
+	font-weight: bold;
+	margin-bottom: 8px;
+}
+
+#content{
+	position: relative;
+	left: 0px;
+	height: 240px;
+	border: 0.1em solid #cacaca;
+	border-radius: 10px;
+	background-color: white;
+	-webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+	margin: 8px 8px 0px;
+	font-weight: bold;
+}
+
+a {
+	background-color: #4B88B6;
+	padding: 5px 15px;
+	border: 1px solid #00516E;
+	color: white;
+	font-size: 18px;
+	text-decoration: none;
+	vertical-align: middle;
+	border-radius: 0 0 10px 10px;
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+	font-weight: bold;
+}
+
+form{
+	position: relative;
+	left: 0px;
+	border: 0.1em solid #00516E;
+	border-radius: 18px;
+	background-color: #4B88B6;
+	-webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+	margin: 0px 8px;
+	margin-bottom: 8px;
+}
+
+fieldset{
+	position: relative;
+	border: 0.1em solid #cacaca;
+	border-radius: 10px;
+	background-color: white;
+	-webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+	margin: 0px 8px;
+	margin-top: 8px;
+}
+
+label{
+	float: left;
+	width:45%;
+	text-align: right;
+	color: #00516E;
+}
+
+input{
+	width: 45%;
+	float: right;
+	border: 0.1em solid #4B88B6;
+}
+
+select{
+	width: 50%;
+	float: right;
+	border: 0.1em solid #4B88B6;
+}
+
+textarea{
+	width: 45%;
+	float: right;
+	border: 0.1em solid #4B88B6;
+}
+
+fieldset li {  
+	float: left;  
+	width: 100%;  
+	padding-bottom: .25em; 
+}
+
+fieldset ul{
+	list-style-type: none;
+	float: left;
+	width: 100%;
+	padding: 0;
+}
+
+#footer{
+	text-align: center;
+	height: 48px;
+}
+
+#submit{
+	background: #4B88B6;
+	width: 175px;
+	color: white;
+	float: left;
+	margin-top: -2px;
+	margin-left: 65px;
+	-moz-border-radius: 0px 0px 10px 10px;
+	-webkit-border-radius: 0px 0px 10px 10px;
+	-webkit-appearance: none;
+	border: 1px solid #00516E;
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+	padding: 5px 15px;
+	font: bold 18px Times;
+	vertical-align: middle;
+}
+
+#ulList{
+	list-style-type: none;
+	margin: 0 8px 8px;
+	border-radius: 18px;
+	background-color: #4B88B6;
+	-webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+	border: 1px solid #00516E;
+}
+
+#mainLi{
+	list-style-type: none;
+	margin: 8px;
+	border-radius: 10px;
+	background-color: white;
+	border: 0.1em solid #cacaca;
+	-webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+#subUl{
+	list-style-type: none;
+	margin-top: 8px;
+}
+
+#subUl li{
+	list-style-type: none;
+}
+
+#items li{
+	color: #00516E;
+	margin-left: 8px;
+}
+
+#editDeleteLi{
+	margin-top: 20px;
+	text-align: center;
+}
+
+#edButtons{
+	list-style-type: none;
+	background-color: #4B88B6;
+	padding: 5px 15px 2px;
+	border: 1px solid #00516E;
+	color: white;
+	font-size: 18px;
+	text-decoration: none;
+	vertical-align: middle;
+	border-radius: 5px 5px 0px 0px;
+	-webkit-box-shadoww: 0 1px 3px rgba(0, 0, 0, 0.5);
+	box-shadow: 1px 0 3px rgba(0, 0, 0, 0.5);
+	font-weight: bold;
+	margin-right: 4px;
+}
+
+span{
+	color: #00516E;
+	margin: 8px;
+	font-size: 12px;
+}
+
+#errors{
+	color: red;
+	margin-bottom: 8px;
+}
